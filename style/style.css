@@ -23,7 +23,7 @@ body {
 
 #addNoteModal {
   position: fixed;
-  left: 20%;
+  left: 30%;
   top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,7 +32,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60%;
+  width: 40%;
   background-color: #fff;
   padding: 1rem;
   border-radius: 10px;
@@ -60,6 +60,10 @@ body {
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 0.5rem;
   border-radius: 5px;
+}
+
+#addNoteModal form .inputed-value:nth-child(2), #addNoteModal form .inputed-value:nth-child(4) {
+  width: 40%;
 }
 
 #addNoteModal form .inputed-value[contentEditable=true]:empty:not(:focus):before {

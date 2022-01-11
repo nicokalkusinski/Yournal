@@ -13,8 +13,9 @@ function removeNotes() {
   }
   selectedNotes.forEach(el => {
     el[0].remove();
-    notes.splice(el[1], 1);
+    notes[el[1]] = null;
   });
+  notes = notes.filter(n => n != null);
   for(let i = 0; i < notes.length; i++) {
     if(i == 0) notes[0].uid = 0;
     else {

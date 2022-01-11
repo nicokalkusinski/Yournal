@@ -26,13 +26,13 @@ body {
 
 #addNoteModal {
   position: fixed;
-  left: 20%;
+  left: 30%;
   top: 10vh;
 
   display: flex;
   flex-direction: column;
 
-  width: 60%;
+  width: 40%;
 
   background-color: #fff;
   padding: 1rem;
@@ -54,6 +54,10 @@ body {
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       padding: 0.5rem;
       border-radius: 5px;
+
+      &:nth-child(2), &:nth-child(4) {
+        width: 40%;
+      }
 
       &[contentEditable=true]:empty:not(:focus):before{
         content:attr(data-text);
