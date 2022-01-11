@@ -348,9 +348,9 @@ nav {
   #content {
     width: 90%;
 
-    #content-preview {
-      right: 5%;
-      width: calc(40% - 1rem - 5%);
+    #note-preview {
+      right: 5% !important;
+      width: calc(40% - 1rem - 5%) !important;
     }
   }
 }
