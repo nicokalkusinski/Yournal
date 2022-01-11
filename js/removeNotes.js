@@ -24,4 +24,5 @@ function removeNotes() {
     }
   }
   if(notes.length == 0) reloadList();
+  saveToLocal();
 }

@@ -29,6 +29,7 @@ function updateNote(uid, title, category, ctx) {
   items[uid].children[2].textContent = note.category;
   items[uid].children[3].textContent = note.date;
   closeNoteBtn.click();
+  saveToLocal();
 }
 
 function setNoteAction(action) {
