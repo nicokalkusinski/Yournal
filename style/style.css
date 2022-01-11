@@ -296,19 +296,31 @@ nav #nav-btns .nav-btn input {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+#content #content-preview #content-legend {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  opacity: 0.3;
+  margin-bottom: 0.8rem;
+}
+
+#content #content-preview #note-preview {
   padding: 0.5rem;
   background-color: white;
   border-radius: 5px;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  opacity: 0;
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
+  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  overflow: hidden;
+  opacity: 0;
 }
 
 #content #content-preview #preview-title {
