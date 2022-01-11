@@ -14,6 +14,7 @@ newNoteBtn.addEventListener("click", () => {
     el.style.zIndex = "2";
   });
   document.body.style.overflow = "hidden";
+  setNoteAction("add");
 })
 
 addNewNoteBtn.addEventListener("click", () => {

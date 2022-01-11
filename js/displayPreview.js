@@ -32,9 +32,11 @@ function displayPreview(id) {
   //calculate sight area
   let sightArea = window.screen.height - nav_bar.offsetHeight;
   let gradient = document.getElementById("preview-more-gradient");
+  // console.log(preview.offsetHeight, sightArea)
   if(preview.offsetHeight > sightArea) {
+    // console.log("this")
     // console.log("sight area:", sightArea, "modal offsetHeight:", preview.offsetHeight)
-    gradient.style.opacity = 1
+    gradient.style.opacity = 1;
     preview.style.height = "50%";
   } else {
     // console.log("sight area:", sightArea, "modal offsetHeight:", preview.offsetHeight)

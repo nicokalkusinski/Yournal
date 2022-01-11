@@ -23,7 +23,7 @@ body {
 
 #addNoteModal {
   position: fixed;
-  left: 30%;
+  left: 20%;
   top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,7 +32,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40%;
+  width: 60%;
   background-color: #fff;
   padding: 1rem;
   border-radius: 10px;
@@ -94,6 +94,15 @@ body {
 #addNoteModal form #btns > :nth-child(2):hover {
   background-color: #84e671;
   color: white;
+}
+
+#addNoteModal form #btns > :nth-child(3):hover {
+  background-color: #84e671;
+  color: white;
+}
+
+#addNoteModal form #btns #saveBtn {
+  display: none;
 }
 
 #addNoteModal h1 {
@@ -289,15 +298,6 @@ nav #nav-btns .nav-btn input {
   font-weight: 700;
 }
 
-#content #content-preview {
-  position: fixed;
-  right: 20%;
-  width: calc(24% - 1rem);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
 #content #content-preview #content-legend {
   display: -ms-grid;
   display: grid;
@@ -308,6 +308,10 @@ nav #nav-btns .nav-btn input {
 }
 
 #content #content-preview #note-preview {
+  position: fixed;
+  right: 20%;
+  width: calc(24% - 1rem);
+  height: auto;
   padding: 0.5rem;
   background-color: white;
   border-radius: 5px;
@@ -341,6 +345,8 @@ nav #nav-btns .nav-btn input {
 
 #content #content-preview #preview-ctx {
   padding: 1rem;
+  width: calc(100% - 2rem);
+  word-wrap: break-word;
 }
 
 #content #content-preview #preview-more-gradient {

@@ -26,13 +26,13 @@ body {
 
 #addNoteModal {
   position: fixed;
-  left: 30%;
+  left: 20%;
   top: 10vh;
 
   display: flex;
   flex-direction: column;
 
-  width: 40%;
+  width: 60%;
 
   background-color: #fff;
   padding: 1rem;
@@ -84,6 +84,15 @@ body {
       & >:nth-child(2):hover {
         background-color: #84e671;
         color: white;
+      }
+
+      & >:nth-child(3):hover {
+        background-color: #84e671;
+        color: white;
+      }
+
+      #saveBtn {
+        display: none;
       }
     }
   }
@@ -265,15 +274,8 @@ nav {
   }
 
   #content-preview {
-    position: fixed;
-    right: 20%;
-
-    width: calc(24% - 1rem);
-    height: fit-content;
-
     #content-legend {
       display: grid;
-      // grid-template-columns: 1f;
       place-items: center;
       font-weight: 700;
       opacity: 0.3;
@@ -281,6 +283,11 @@ nav {
     }
 
     #note-preview {
+      position: fixed;
+      right: 20%;
+
+      width: calc(24% - 1rem);
+      height: auto;
       padding: 0.5rem;
       background-color: white;
       border-radius: 5px;
@@ -309,6 +316,8 @@ nav {
 
     #preview-ctx {
       padding: 1rem;
+      width: calc(100% - 2rem);
+      word-wrap: break-word;
     }
 
     #preview-more-gradient {

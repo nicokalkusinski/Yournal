@@ -1,5 +1,5 @@
 let notes = []
-
+let openNoteUID = null;
 class Note {
   constructor(title, category, ctx, date = null) {
     this.uid = notes.length;
@@ -19,12 +19,6 @@ class Note {
     return this;
   }
 
-  updateNote(title, category, ctx) {
-    this.title = title;
-    this.category = category;
-    this.ctx = ctx;
-  }
-
   addNote() {
     notes.push(this.getNote())
     this.drawNote()
@@ -36,6 +30,7 @@ class Note {
     let item = items[items.length-1];
     item.addEventListener("mouseenter", () => displayPreview(this.uid))
     item.addEventListener("mouseleave", () => noPreview())
+    item.children[1].addEventListener("click", () => openNote(this.uid))
   }
 
   drawNote() {
@@ -81,8 +76,8 @@ class Note {
   }
 }
 
-// new Note("Hover over me!", "Guide", "This is the guide how should you use the Yournal app!")
-// new Note("Long text test", "Guide", "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci dicta, recusandae laborum unde maiores, quos et impedit nemo neque enim perspiciatis consequuntur facere rem sit explicabo dolorem illum mollitia saepe dignissimos fugit vero quidem? Reiciendis ducimus architecto quaerat illo nam praesentium explicabo animi ad beatae, nihil, corporis sit quasi aspernatur cupiditate rerum asperiores at. Eveniet nihil itaque totam sint aspernatur laborum ut mollitia. Labore reiciendis consequuntur beatae nesciunt, fugiat dicta. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci dicta, recusandae laborum unde maiores, quos et impedit nemo neque enim perspiciatis consequuntur facere rem sit explicabo dolorem illum mollitia saepe dignissimos fugit vero quidem? Reiciendis ducimus architecto quaerat illo nam praesentium explicabo animi ad beatae, nihil, corporis sit quasi aspernatur cupiditate rerum asperiores at. Eveniet nihil itaque totam sint aspernatur laborum ut mollitia. Labore reiciendis consequuntur beatae nesciunt, fugiat dicta. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci dicta, recusandae laborum unde maiores, quos et impedit nemo neque enim perspiciatis consequuntur facere rem sit explicabo dolorem illum mollitia saepe dignissimos fugit vero quidem? Reiciendis ducimus architecto quaerat illo nam praesentium explicabo animi ad beatae, nihil, corporis sit quasi aspernatur cupiditate rerum asperiores at. Eveniet nihil itaque totam sint aspernatur laborum ut mollitia. Labore reiciendis consequuntur beatae nesciunt, fugiat dicta. ")
+new Note("Hover over me!", "Guide", "This is the guide how should you use the Yournal app!")
+new Note("Long text test", "Guide", "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci dicta, recusandae laborum unde maiores, quos et impedit nemo neque enim perspiciatis consequuntur facere rem sit explicabo dolorem illum mollitia saepe dignissimos fugit vero quidem? Reiciendis ducimus architecto quaerat illo nam praesentium explicabo animi ad beatae, nihil, corporis sit quasi aspernatur cupiditate rerum asperiores at. Eveniet nihil itaque totam sint aspernatur laborum ut mollitia. Labore reiciendis consequuntur beatae nesciunt, fugiat dicta. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci dicta, recusandae laborum unde maiores, quos et impedit nemo neque enim perspiciatis consequuntur facere rem sit explicabo dolorem illum mollitia saepe dignissimos fugit vero quidem? Reiciendis ducimus architecto quaerat illo nam praesentium explicabo animi ad beatae, nihil, corporis sit quasi aspernatur cupiditate rerum asperiores at. Eveniet nihil itaque totam sint aspernatur laborum ut mollitia. Labore reiciendis consequuntur beatae nesciunt, fugiat dicta. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci dicta, recusandae laborum unde maiores, quos et impedit nemo neque enim perspiciatis consequuntur facere rem sit explicabo dolorem illum mollitia saepe dignissimos fugit vero quidem? Reiciendis ducimus architecto quaerat illo nam praesentium explicabo animi ad beatae, nihil, corporis sit quasi aspernatur cupiditate rerum asperiores at. Eveniet nihil itaque totam sint aspernatur laborum ut mollitia. Labore reiciendis consequuntur beatae nesciunt, fugiat dicta. ")
 // for(let i = 0; i < 30; i++) {
 //   new Note(`title ${i+1}`, "cat", "sample text")
 // }
