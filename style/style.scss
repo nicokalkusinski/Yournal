@@ -51,13 +51,9 @@ body {
     .inputed-value {
       margin-bottom: 1rem;
       outline: none;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       padding: 0.5rem;
       border-radius: 5px;
-
-      &:nth-child(2), &:nth-child(4) {
-        width: 40%;
-      }
 
       &[contentEditable=true]:empty:not(:focus):before{
         content:attr(data-text);

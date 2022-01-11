@@ -56,14 +56,8 @@ body {
 #addNoteModal form .inputed-value {
   margin-bottom: 1rem;
   outline: none;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 0.5rem;
   border-radius: 5px;
-}
-
-#addNoteModal form .inputed-value:nth-child(2), #addNoteModal form .inputed-value:nth-child(4) {
-  width: 40%;
 }
 
 #addNoteModal form .inputed-value[contentEditable=true]:empty:not(:focus):before {

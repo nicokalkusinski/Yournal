@@ -27,7 +27,8 @@ addNewNoteBtn.addEventListener("click", () => {
 })
 
 closeNoteBtn.addEventListener("click", () => {
-  document.getElementById("newNoteForm").reset();
+  let toReset = document.getElementsByClassName("inputed-value");
+  for(let i = 0; i <toReset.length; i++) toReset[i].innerHTML = "";
   modal.forEach(el => el.style.display = "none");
   document.body.style.overflow = "auto";
 })
