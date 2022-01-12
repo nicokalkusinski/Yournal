@@ -25,15 +25,15 @@ function updateNote(uid, title, category, ctx) {
   note.date = date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear();
 
   let items = document.getElementsByClassName("list-item");
-  items[uid].children[1].textContent = note.title;
-  items[uid].children[2].textContent = note.category;
-  items[uid].children[3].textContent = note.date;
+  items[uid].children[1].innerHTML = note.title;
+  items[uid].children[2].innerHTML = note.category;
+  items[uid].children[3].innerHTML = note.date;
   closeNoteBtn.click();
   saveToLocal();
 }
 
 function setNoteAction(action) {
-  let header = document.getElementById("addNoteModal").children[0];
+  let header = document.getElementById("modalHeader");
   let values = document.getElementsByClassName("inputed-value");
   let btns = [
     document.getElementById("addBtn"),
@@ -41,7 +41,8 @@ function setNoteAction(action) {
   ]
   switch(action){
     case "add":
-      header.textContent = "Create a new note";
+      // console.log("add")
+      header.innerHTML = "Create a new note";
     
       values[0].textContent = "";
       values[1].textContent = "";
@@ -51,7 +52,8 @@ function setNoteAction(action) {
       btns[1].style.display = "none";
       break;
     case "edit":
-      header.textContent = "Edit the note";
+      // console.log("edit")
+      header.innerHTML = "Edit the note";
     
       values[0].textContent = note.title;
       values[1].textContent = note.category;

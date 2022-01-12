@@ -12,6 +12,31 @@ body {
           user-select: none;
 }
 
+#searchModal {
+  position: absolute;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3rem;
+  width: 12rem;
+  padding: 0.75rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  overflow: hidden;
+}
+
 #darkener {
   position: fixed;
   top: 0;
@@ -60,8 +85,15 @@ body {
   border-radius: 5px;
 }
 
+#addNoteModal form .inputed-value:nth-child(6) {
+  overflow: scroll;
+  height: 40vh;
+}
+
 #addNoteModal form .inputed-value[contentEditable=true]:empty:not(:focus):before {
   content: attr(data-text);
+  position: absolute;
+  z-index: -1;
   opacity: 0.3;
 }
 
@@ -133,11 +165,19 @@ nav h1 {
 }
 
 nav #nav-btns {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto;
   margin-bottom: 1rem;
   gap: 1rem;
@@ -157,22 +197,40 @@ nav #nav-btns .nav-btn {
   font-size: 1.4rem;
 }
 
-nav #nav-btns .nav-btn:nth-child(1):hover {
-  background-color: #84e671;
-  color: white;
-}
-
-nav #nav-btns .nav-btn:nth-child(2):hover {
-  background-color: #f05151;
-  color: white;
-}
-
 nav #nav-btns .nav-btn:hover {
-  color: #303030;
+  color: white;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
   -webkit-box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+}
+
+nav #nav-btns .nav-btn:nth-child(1):hover {
+  background-color: #84e671;
+}
+
+nav #nav-btns .nav-btn:nth-child(2):hover {
+  background-color: #f05151;
+}
+
+nav #nav-btns .nav-btn:nth-child(3):hover {
+  background-color: #505050;
+}
+
+nav #nav-btns .nav-btn:nth-child(4):hover {
+  background-color: #505050;
+}
+
+nav #nav-btns .nav-btn:nth-child(5):hover {
+  background-color: #77a1f0;
+}
+
+nav #nav-btns .nav-btn:nth-child(6):hover {
+  background-color: #77a1f0;
+}
+
+nav #nav-btns .nav-btn:nth-child(7):hover {
+  background-color: #77a1f0;
 }
 
 nav #nav-btns .nav-btn input {
