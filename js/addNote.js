@@ -23,8 +23,9 @@ addNewNoteBtn.addEventListener("click", () => {
   // for(let i = 0; i < inputs.length; i++) {
   //   if(inputs[i].innerHTML == "") values.push("Untitled")
   // }
-  values.push(inputs[0].innerHTML ? inputs[0] != "" : "Note " + (notes.length+1))
-  values.push(inputs[1].innerHTML ? inputs[1] != "" : "No category")
+  // condition ? exprIfTrue : exprIfFalse
+  values.push(inputs[0].innerHTML != "" ? inputs[0].innerHTML : "Note " + (notes.length+1))
+  values.push(inputs[1].innerHTML != "" ? inputs[1].innerHTML : "No category")
   values.push(inputs[2].innerHTML)
 
   // if(inputs[0].innerHTML == "") values.push("Note " + (notes.length + 1))
