@@ -1,20 +1,3 @@
-function reloadList() {
-  let items = document.getElementsByClassName("list-item");
-  let emptyListText = document.getElementById("list-empty");
-  let listLegend = document.getElementById("list-legend");
-  let contentLegend = document.getElementById("content-legend");
-  if(items.length == 0) {
-    emptyListText.style.display = "block";
-    listLegend.style.display = "none";
-    contentLegend.style.display = "none";
-  } else {
-    emptyListText.style.display = "none";
-    listLegend.style.display = "grid";
-    contentLegend.style.display = "grid";
-  }
-}
-reloadList();
-
 function displayPreview(id) {
   //preview appearance
   let preview = document.getElementById("note-preview");
@@ -27,6 +10,7 @@ function displayPreview(id) {
   preview.children[0].innerHTML = notes[id].title;
   preview.children[1].children[1].innerHTML = notes[id].category;
   preview.children[1].children[3].innerHTML = notes[id].date;
+  // preview.children[2].innerHTML = notes[id].ctx.replaceAll("\n", "\<br\>");
   preview.children[2].innerHTML = notes[id].ctx;
 
   //calculate sight area

@@ -20,12 +20,12 @@ function updateNote(uid, title, category, ctx) {
   let note = notes[uid];
   note.title = title;
   note.category = category;
-  note.ctx = ctx;
+  note.ctx = ctx.replaceAll("\<br\>", "\<br\>\n");
   let date = new Date();
   note.date = date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear();
 
   let items = document.getElementsByClassName("list-item");
-  items[uid].children[1].innerHTML = note.title;
+  items[uid].children[1].innerHTML = note.title + "<i class='bx bx-show'></i>";
   items[uid].children[2].innerHTML = note.category;
   items[uid].children[3].innerHTML = note.date;
   closeNoteBtn.click();
@@ -57,7 +57,9 @@ function setNoteAction(action) {
     
       values[0].textContent = note.title;
       values[1].textContent = note.category;
-      values[2].textContent = note.ctx;
+      note.ctx = note.ctx.replaceAll("\<br\>", "\<br\>\n")
+      note.ctx = note.ctx.replaceAll("\<br\>\n\n", "\<br\>\n")
+      values[2].innerText = note.ctx;
     
       btns[0].style.display = "none";
       btns[1].style.display = "block";

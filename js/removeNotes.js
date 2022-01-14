@@ -7,7 +7,7 @@ function removeNotes() {
   let selectedNotes = [];
   for(let i = 0; i < notes_body.length; i++) {
     let note = notes_body[i];
-    if(note.children[0].children[1].children[0].checked) {
+    if(note.children[0].children[0].children[0].checked) {
       selectedNotes.push([note, i]);
     }
   }
@@ -23,6 +23,6 @@ function removeNotes() {
       el.uid = notes[i-1].uid+1;
     }
   }
-  if(notes.length == 0) reloadList();
+  reloadList();
   saveToLocal();
 }

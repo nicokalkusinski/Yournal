@@ -21,5 +21,5 @@ function loadFromLocal() {
 }
 
 notesLS.forEach(note => {
-  new Note(note.title, note.category, note.ctx, note.date);
+  new Note(note.title, note.category, note.ctx, note.date, false);
 });

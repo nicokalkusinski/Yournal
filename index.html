@@ -30,6 +30,14 @@
       </div>
     </form>
   </div>
+  <div id="showNoteModal">
+    <div id="noteInfo">
+      <h1>Title</h1>
+      <h3>on <span class="bolded">date</span> as <span class="bolded">category</span></h3>
+    </div>
+    <div id="noteContent"></div>
+    <div id="closeNoteBtn">Close</div>
+  </div>
   <nav>
     <h1>
       <span style="font-weight: 700;">You</span><span style="font-size: 0.8em;">r</span><span style="font-size: 0.6em;">nal</span>
@@ -55,6 +63,7 @@
         <div class="label">Category</div>
         <div class="label">Date</div>
       </div>
+      <div id="items-container"></div>
       <!-- <div class="list-item">
         <div class="item-icons">
           <div class="icon-drag">
@@ -67,7 +76,7 @@
             <i class='bx bx-edit-alt' ></i>
           </div>
         </div>
-        <div class="item-title">the title asdf </div>
+        <div class="item-title">the title asdf<i class='bx bx-show'></i></div>
         <div class="item-category">Dream</div>
         <div class="item-date">10.01.2022</div>
       </div> -->
@@ -110,5 +119,6 @@
   <script src="js/displayPreview.js"></script>
   <script src="js/localStorage.js"></script>
   <script src="js/search.js"></script>
+  <script src="js/showNote.js"></script>
 </body>
 </html>

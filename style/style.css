@@ -86,7 +86,7 @@ body {
 }
 
 #addNoteModal form .inputed-value:nth-child(6) {
-  overflow: scroll;
+  overflow-y: scroll;
   height: 40vh;
 }
 
@@ -139,6 +139,71 @@ body {
 
 #addNoteModal h1 {
   text-align: center;
+}
+
+#showNoteModal {
+  position: fixed;
+  z-index: 100;
+  left: 20%;
+  top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#showNoteModal h1, #showNoteModal h3 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#showNoteModal h3 {
+  font-weight: 400;
+}
+
+#showNoteModal #noteContent {
+  margin-top: 2rem;
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+#showNoteModal .bolded {
+  font-weight: 700;
+}
+
+#showNoteModal #closeNoteBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  margin-top: 3rem;
+  width: 50%;
+  text-align: center;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#showNoteModal #closeNoteBtn:hover {
+  background-color: #f05151;
+  color: white;
 }
 
 nav {
@@ -282,6 +347,17 @@ nav #nav-btns .nav-btn input {
   font-weight: 700;
 }
 
+#content #list #items-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.8rem;
+}
+
 #content #list .list-item {
   display: -ms-grid;
   display: grid;
@@ -354,6 +430,15 @@ nav #nav-btns .nav-btn input {
 #content #list .list-item .item-title {
   font-size: 1.2rem;
   font-weight: 700;
+  cursor: pointer;
+  gap: 0.3rem;
+}
+
+#content #list .list-item .item-title i {
+  font-size: 1.4rem;
+  opacity: 0;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 
 #content #content-preview #content-legend {
