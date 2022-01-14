@@ -11,13 +11,15 @@ function displayPreview(id) {
   preview.children[1].children[1].innerHTML = notes[id].category;
   preview.children[1].children[3].innerHTML = notes[id].date;
   // preview.children[2].innerHTML = notes[id].ctx.replaceAll("\n", "\<br\>");
-  preview.children[2].innerHTML = notes[id].ctx;
+  tempCtx = notes[id].ctx;
+  tempCtx = tempCtx.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+  preview.children[2].innerHTML = tempCtx;
 
   //calculate sight area
   let sightArea = window.screen.height - nav_bar.offsetHeight;
   let gradient = document.getElementById("preview-more-gradient");
-  // console.log(preview.offsetHeight, sightArea)
-  if(preview.offsetHeight > sightArea) {
+  // console.log(preview.offsetHeight, sightArea*0.9)
+  if(preview.offsetHeight > sightArea * 0.6) {
     // console.log("this")
     // console.log("sight area:", sightArea, "modal offsetHeight:", preview.offsetHeight)
     gradient.style.opacity = 1;

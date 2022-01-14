@@ -2,7 +2,7 @@
 // Store after JSON stringifying (is this a verb?) it
 function saveToLocal() {
   localStorage.setItem('notes', JSON.stringify(notes));
-  console.log("Notes saved");
+  // console.log("Notes saved");
 }
 
 // Get an array from local storage
@@ -12,10 +12,11 @@ function loadFromLocal() {
   let notesloaded = localStorage.getItem('notes');
   if(notesloaded != null) {
     notesloaded = JSON.parse(notesloaded);
-    console.log("Notes loaded", notesloaded);
+    // console.log("Notes loaded", notesloaded);
+    console.log("Notes loaded.")
     return notesloaded;
   } else {
-    console.log("localStorage not found.");
+    console.log("localStorage file not found.");
     return [];
   }
 }

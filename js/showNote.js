@@ -16,7 +16,9 @@ function displayNote(id) {
   noteInfo.children[0].innerHTML = note.title;
   noteInfo.children[1].innerHTML = `On <span class="bolded">${note.date}</span> as <span class="bolded">${note.category}</span>`;
 
-  noteContent.innerHTML = note.ctx;
+  tempCtx = note.ctx;
+  tempCtx = tempCtx.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+  noteContent.innerHTML = tempCtx;
 }
 
 let closeDisplayBtn = document.getElementById("closeNoteBtn");

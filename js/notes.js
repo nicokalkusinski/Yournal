@@ -85,7 +85,7 @@ function reloadList() {
     listLegend.style.display = "grid";
     contentLegend.style.display = "grid";
 
-    console.log(notes)
+    // console.log(notes)
     redrawNotes(notes)
   }
 

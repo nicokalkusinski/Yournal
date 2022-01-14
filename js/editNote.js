@@ -13,14 +13,15 @@ function openNote(id) {
 
 document.getElementById("saveBtn").addEventListener("click", () => {
   let values = document.getElementsByClassName("inputed-value");
-  updateNote(openNoteUID, values[0].textContent, values[1].textContent, values[2].textContent);
+  updateNote(openNoteUID, values[0].innerHTML, values[1].innerHTML, values[2].innerHTML);
 })
 
 function updateNote(uid, title, category, ctx) {
   let note = notes[uid];
   note.title = title;
   note.category = category;
-  note.ctx = ctx.replaceAll("\<br\>", "\<br\>\n");
+  // note.ctx = ctx.replaceAll("\<br\>", "\<br\>\n");
+  note.ctx = ctx;
   let date = new Date();
   note.date = date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear();
 
@@ -57,9 +58,9 @@ function setNoteAction(action) {
     
       values[0].textContent = note.title;
       values[1].textContent = note.category;
-      note.ctx = note.ctx.replaceAll("\<br\>", "\<br\>\n")
-      note.ctx = note.ctx.replaceAll("\<br\>\n\n", "\<br\>\n")
-      values[2].innerText = note.ctx;
+      // note.ctx = note.ctx.replaceAll("\<br\>", "\<br\>\n")
+      // note.ctx = note.ctx.replaceAll("\<br\>\n\n", "\<br\>\n")
+      values[2].innerHTML = note.ctx;
     
       btns[0].style.display = "none";
       btns[1].style.display = "block";

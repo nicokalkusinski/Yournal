@@ -20,7 +20,22 @@ newNoteBtn.addEventListener("click", () => {
 addNewNoteBtn.addEventListener("click", () => {
   let inputs = document.getElementsByClassName("inputed-value")
   let values = []
-  for(let i = 0; i < inputs.length; i++) values.push(inputs[i].textContent)
+  // for(let i = 0; i < inputs.length; i++) {
+  //   if(inputs[i].innerHTML == "") values.push("Untitled")
+  // }
+  values.push(inputs[0].innerHTML ? inputs[0] != "" : "Note " + (notes.length+1))
+  values.push(inputs[1].innerHTML ? inputs[1] != "" : "No category")
+  values.push(inputs[2].innerHTML)
+
+  // if(inputs[0].innerHTML == "") values.push("Note " + (notes.length + 1))
+  // else values.push(inputs[0].innerHTML)
+  
+  if(inputs[1].innerHTML == "") values.push("No category")
+  else values.push(inputs[1].innerHTML)
+
+  if(inputs[2].innerHTML == "") values.push("")
+  else values.push(inputs[2].innerHTML)
+
   new Note(values[0], values[1], values[2]);
   closeNoteBtn.click()
   saveToLocal()
